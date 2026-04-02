@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Academic Portfolio of Sanaullah - Exploring Physics, Biology, and the Generative Medical Field">
+    <title>Sanaullah | Academic Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/profile_web.webp">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Space Background Canvas -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Custom Glowing Cursor -->
+    <div class="cursor-glow"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-img-link"><img src="images/media__1772983756773.png" loading="lazy"
+                    alt="Sanaullah Logo" class="nav-logo"></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#vision">Vision</a>
+                <a href="contact/index.html" class="btn-contact">Contact</a>
+            </div>
+            <div class="mobile-menu-btn" style="cursor: pointer;">
+                <i class="fas fa-bars" style="pointer-events: none;"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="greeting">Welcome to the</p>
+            <h1 class="main-title"><span class="glitch" data-text="Sanaullah">Sanaullah</span><span
+                    class="brown-fade">.live</span></h1>
+            <h2 class="subtitle">Exploring the Generative Medical Field</h2>
+            <p class="bio">Passionate about the intersection of physics and biology, driven by a deep curiosity for
+                computational applications in the medical sciences.</p>
+            <div class="hero-cta">
+                <a href="#academics" class="btn btn-primary">View Academics</a>
+                <a href="#vision" class="btn btn-secondary">My Vision</a>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <div class="blob-bg"></div>
+            <!-- Place your transparent image here named 'images/profile_web.webp'. It will automatically glow! -->
+            <img src="images/profile_web.webp" loading="lazy" alt="Generative Medicine Concept" class="hero-image"
+                id="profile-img"
+                onerror="this.onerror=null; this.src='images/transparent_dna_helix_1772980657679.png'; this.style.mixBlendMode='screen';">
+        </div>
+    </section>
+
+    <!-- Academic Profile Section -->
+    <section class="academics section-padding" id="academics">
+        <div class="section-header reveal">
+            <h2>Academic <span>Excellence</span></h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="academics-grid">
+            <!-- Major Achievement Highlight -->
+            <div class="achievement-card highlight reveal delay-1">
+                <div class="card-icon blue-glow">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Class 12th - JMI Board</h3>
+                <p class="score-text">Rank 1</p>
+                <p class="detail">Secured the absolute top ranking in the Jamia Millia Islamia Class 12th Board
+                    Examination with an outstanding overall percentage.</p>
+            </div>
+
+            <div class="achievement-card reveal delay-2">
+                <div class="card-icon red-glow">
+                    <i class="fas fa-school"></i>
+                </div>
+                <h3>Class 10th - Bihar Board</h3>
+                <p class="score-text" style="font-size: 2rem;">Excellent</p>
+                <p class="detail">Demonstrated a strong foundational understanding and passed with an excellent
+                    overall percentage from the Bihar Board.</p>
+            </div>
+
+            <div class="achievement-card reveal delay-3">
+                <div class="card-icon green-glow">
+                    <i class="fas fa-dna"></i>
+                </div>
+                <h3>Core Competencies</h3>
+                <p class="subject-tags">
+                    <span class="tag">Physics</span>
+                    <span class="tag">Biology</span>
+                    <span class="tag">Computer Science</span>
+                </p>
+                <p class="detail">Maintaining high standards in theoretical sciences and their computational
+                    intersections.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision section-padding" id="vision">
+        <div class="vision-container reveal">
+            <div class="vision-content">
+                <h2>The <span>Vision</span></h2>
+                <div class="divider left"></div>
+                <div class="vision-text">
+                    <p>My academic journey is driven by a profound fascination with human biology, molecular mechanisms,
+                        and the physical laws underlying life itself.</p>
+                    <p>I aim to dedicate my work to the generative medical field, leveraging computational tools as a
+                        crucial means to revolutionize clinical research, unearth novel therapeutics, and meaningfully
+                        advance human healthcare.</p>
+                    <div class="professor-note">
+                        <p><em>"I constantly sought knowledge and truth, and it became my belief that for gaining access
+                                to the closeness to God, there is no better way than that of searching for truth and
+                                knowledge."</em></p>
+                    </div>
+                </div>
+            </div>
+            <div class="vision-interactive">
+                <!-- A simple DNA/Molecule visual representation constructed via CSS/JS could go here -->
+                <div class="orb-container">
+                    <div class="orb core"></div>
+                    <div class="orb electron e1"></div>
+                    <div class="orb electron e2"></div>
+                    <div class="orb electron e3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="footer" id="contact">
+        <div class="footer-content reveal">
+            <div class="footer-brand">
+                <h2>Sanaullah</h2>
+                <p>sanaullah.live</p>
+                <div class="social-links">
+                    <a href="https://twitter.com/S4Sanaullah" target="_blank" class="social-icon"
+                        aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://facebook.com/sanaullah.xyz" target="_blank" class="social-icon"
+                        aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/sanaullah.xyz" target="_blank" class="social-icon"
+                        aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/realsanaullah" target="_blank" class="social-icon"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <a href="mailto:contact@sanaullah.live" class="contact-link"><i class="fas fa-envelope"></i>
+                    contact@sanaullah.live</a>
+                <br>
+                <a href="contact/index.html" class="contact-link"><i class="fas fa-paper-plane"></i>
+                    Open Contact Form</a>
+                <p class="availability"><span class="status-dot"></span> Available for inquiries</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sanaullah. All Rights Reserved.</p>
+            <div class="legal-links"
+                style="margin-top: 20px; display: flex; flex-wrap: wrap; justify-content: center; padding-bottom: 20px;">
+                <a href="terms.html"
+                    style="font-size: 0.8rem; color: var(--text-secondary); margin: 5px 10px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Terms
+                    of Service</a>
+                <a href="privacy.html"
+                    style="font-size: 0.8rem; color: var(--text-secondary); margin: 5px 10px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Privacy
+                    Policy</a>
+                <a href="disclaimer.html"
+                    style="font-size: 0.8rem; color: var(--text-secondary); margin: 5px 10px; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Disclaimer</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
