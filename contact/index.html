@@ -63,30 +63,28 @@
 
             <!-- Custom Success Message (Hidden by Default) -->
             <div class="success-message" style="display: none;">
-                <div class="success-icon"><i class="ph ph-check-circle"></i></div>
+                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
                 <h3>Form Submitted!</h3>
                 <p>Your form has been submitted successfully. Expect a reply within 24 hours.</p>
-                <button type="button" class="back-btn" onclick="resetForm()">
-                    <i class="ph ph-arrow-left"></i>
+                <button type="button" class="back-btn" onclick="window.location.href='../index.html'">
+                    <i class="fa-solid fa-arrow-left"></i>
                     <span>Back to Main Website</span>
                 </button>
             </div>
 
             <!-- Custom Error Message (Hidden by Default) -->
             <div class="error-message" style="display: none;">
-                <div class="error-icon"><i class="ph ph-warning-circle"></i></div>
+                <div class="error-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
                 <h3>Form Not Submitted</h3>
                 <p>The submission limit was exceeded or an error occurred. Please contact me directly at <a
                         href="mailto:hello@sanaullah.live" style="color: var(--accent-2);">hello@sanaullah.live</a></p>
                 <button type="button" class="back-btn" onclick="resetForm()">
-                    <i class="ph ph-arrow-counter-clockwise"></i>
+                    <i class="fa-solid fa-rotate-left"></i>
                     <span>Try Again</span>
                 </button>
             </div>
 
-            <form id="contactForm" action="https://formsubmit.co/8f2551299d23c35c567b57f4c2f33c4a " method="POST"
-                class="contact-form">
-                <input type="hidden" name="_next" value="https://sanaullah.live/contact">
+            <form id="contactForm" class="contact-form">
                 <input type="hidden" name="_subject" value="New submission from your portfolio!">
                 <input type="hidden" name="_captcha" value="false">
 
@@ -125,6 +123,75 @@
         </footer>
 
     </main>
+
+    <!-- Form Handling Script -->
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMsg = document.querySelector('.success-message');
+        const errorMsg = document.querySelector('.error-message');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Loading state
+            btnText.innerText = 'Sending...';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value,
+                _subject: "New submission from your portfolio!",
+                _captcha: "false"
+            };
+
+            fetch("https://formsubmit.co/ajax/8f2551299d23c35c567b57f4c2f33c4a", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Limit exceeded or server error');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    form.style.display = 'none';
+                    if (data.success === "true" || data.success === true) {
+                        successMsg.style.display = 'flex';
+                    } else {
+                        errorMsg.style.display = 'flex';
+                    }
+                    resetButton();
+                })
+                .catch(error => {
+                    console.error("Form error:", error);
+                    form.style.display = 'none';
+                    errorMsg.style.display = 'flex';
+                    resetButton();
+                });
+        });
+
+        function resetButton() {
+            btnText.innerText = 'Send Message';
+            submitBtn.style.opacity = '1';
+            submitBtn.disabled = false;
+        }
+
+        function resetForm() {
+            successMsg.style.display = 'none';
+            errorMsg.style.display = 'none';
+            form.style.display = 'flex';
+            form.reset();
+        }
+    </script>
 
 </body>
 
